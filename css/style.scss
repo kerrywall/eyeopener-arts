@@ -32,14 +32,15 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 		font-weight: lighter;
 	}
 	header {
-		background-color: #2c3e50;
+		background-color: #f7f7f7;
 		font-family: 'Open Sans' sans-serif;
-		text-transform: uppercase;
 		font-weight: lighter;
 		position: fixed;
 		width: 100%;
 		z-index: 1;
-		color: #fff;
+		color: #000;
+		border-bottom: 1px solid #000;
+		box-shadow: 0 0 2px #000;
 		padding: 10px;
 		.hamburger {
 			display: inline;
@@ -57,14 +58,24 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 				display: block;
 			}
 		}
-		ul.desktop {
+		.desktopMenu {
 			display: none;
-			li {
-				display: inline;
+			width: 100px;
+			ul.desktop {
+				transition: 1s all ease;
+				display: none;
+				height: auto;
+				background: #fff;
+				padding: 0;
+				border: 1px solid #000;
+				li {
+					display: block;
+				}
 			}
+
 		}
 		a {
-			color: #fff;
+			color: #000;
 			text-decoration: none;
 			padding: 5px 0;
 		}
@@ -78,21 +89,40 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 	.intro {
 		color: #000;
-		padding: 100px;
+		padding: 40px 0 0 0;
 		h1 {
 			text-align: center;
 		}
 	}
 	.text {
 		background-color: #f7f7f7;
-		opacity: 0.9;
+		opacity: 0.95;
 		padding: 10px;
 	}
 	.right {
 		float: right;
+		border-left: 1px solid #000;
 	}
 	.left {
 		float: left;
+		border-right: 1px solid #000;
+	}
+
+	footer {
+		background-color: #000;
+		font-size: 'Open Sans', sans-serif;
+		color: #fff;
+		ul {
+			font-weight: lighter;
+			list-style-type: none;
+			padding: 0;
+			li {
+				margin: 5px 0;
+			}
+		}
+		a {
+			color: #fff;
+		}
 	}
 
 
@@ -116,7 +146,25 @@ h3 {
 section {
 }
 .intro {
+	padding:10px;
 }
+}
+
+footer {
+	padding: 10px 20px;
+	.credits, .eye {
+		width: 100%;
+		float: none;
+		margin: 5px 0;
+	}
+	.eye {
+		p {
+			font-size: 12px;	
+		}
+	}
+	.social, .fb-like {
+		margin: 10px 0;
+	}
 }
 
  
@@ -133,13 +181,44 @@ section {
 }
 
 header {
-	text-align: center;
-	ul.desktop {
-		display: block;
-		li {
-			margin: 0 10px;
-		}
+	h1 {
+		text-align: center;
 	}
+	.desktopMenu {
+		display: block;
+		text-transform: uppercase;
+		p {
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
+		ul.desktop {
+			transition: 1s all ease;
+			li {
+				a {
+					padding: 10px;
+				}
+			}
+			.social, .fb-like {
+				padding: 5px 10px;
+			}
+		}
+			&:hover {
+				ul.desktop {
+					display: block;
+					position: absolute;
+					li {
+						margin: 10px;
+						a {
+							transition: 1s all ease;
+							&:hover {
+								background: #e0e0e0;
+							}
+						}
+					}
+				}
+			}
+		}
 	.hamburger {
 		display: none;
 	}
@@ -157,16 +236,51 @@ header {
 .three {
 	background-image: url(../gfx/3.jpg);
 }
+.four {
+	background-image: url(../gfx/4.jpg);
+}
+.five {
+	background-image: url(../gfx/5.jpg);
+}
+.six {
+	background-image: url(../gfx/6.jpg);
+}
+.seven {
+	background-image: url(../gfx/7.jpg);
+}
+.eight {
+	background-image: url(../gfx/8.jpg);
+}
+.nine {
+	background-image: url(../gfx/9.jpg);
+}
 
 .text {
 	width: 40%;
+}
+
+footer {
+	font-family: 'Open Sans', sans-serif;
+		padding: 10px 20px;
+		font-size: 12px;
+		.credits {
+			width: 55%;
+			float: left;
+			margin-right: 10px;
+		}
+		.eye {
+			width: 40%;
+			float: left;
+		}
 }
 }
  
 /* Large screens ----------- */
 @media only screen
 and (min-width : 1824px) {
-/* Styles */
+	.text {
+		min-height: 1000px;
+	}
 }
  
 /* iPhone 4 ----------- */
